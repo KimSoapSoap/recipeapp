@@ -26,53 +26,53 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView(
-      children: [
-        Text("Recipes", style: TextStyle(fontSize: 30)),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _mIcon(Icons.food_bank, "ALL"),
-            SizedBox(width: 25),
-            _mIcon(Icons.food_bank, "ALL"),
-            SizedBox(width: 25),
-            _mIcon(Icons.food_bank, "ALL"),
-            SizedBox(width: 25),
-            _mIcon(Icons.food_bank, "ALL"),
+            Text("Recipes", style: TextStyle(fontSize: 30)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                _mIcon(Icons.food_bank, "ALL"),
+                SizedBox(width: 25),
+                _mIcon(Icons.emoji_food_beverage, "ALL"),
+                SizedBox(width: 25),
+                _mIcon(Icons.fastfood, "ALL"),
+                SizedBox(width: 25),
+                _mIcon(Icons.local_pizza, "ALL"),
+              ],
+            )
           ],
-        )
-      ],
-    ));
+        ));
   }
 
 
   //매개변수에 타입을 안 적으면 dynamic으로 타입추론을 한다.
   Container _mIcon(mIcon, text) {
     return Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black12),
-              borderRadius: BorderRadius.circular(30)
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.black12),
+          borderRadius: BorderRadius.circular(30)
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            mIcon,
+            color: Colors.redAccent,
+            size: 30,
+          ),
+          SizedBox(height: 5,),
+          Text(
+            //문자열이 null이면 터지기 때문에 "" 안에 $변수로 넣어준다.
+            "$text",
+            style: TextStyle(
+              color: Colors.black87,
+              fontWeight: FontWeight.bold,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  mIcon,
-                  color: Colors.redAccent,
-                  size: 30,
-                ),
-                SizedBox(height: 5,),
-                Text(
-                  //문자열이 null이면 터지기 때문에 "" 안에 $변수로 넣어준다.
-                  "$text",
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ],
-            ),
-          );
+          )
+        ],
+      ),
+    );
   }
 }
