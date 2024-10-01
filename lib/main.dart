@@ -47,9 +47,13 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 10),
               _menu(),
               SizedBox(height: 10),
-              RecipeItem("burger.jpeg", "berger"),
               RecipeItem("coffee.jpeg", "coffee"),
+              RecipeItem("burger.jpeg", "burger"),
               RecipeItem("pizza.jpeg", "pizza"),
+              Container(
+                height: 300,
+                color: Colors.red,
+              ),
             ],
           ),
         ));
@@ -120,28 +124,25 @@ class RecipeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          AspectRatio(
-            aspectRatio: 3 / 2, // 가로 / 세로 비율
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset("assets/$imageName", fit: BoxFit.cover),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AspectRatio(
+          aspectRatio: 3 / 2, // 가로 / 세로 비율
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset("assets/$imageName", fit: BoxFit.cover),
           ),
-          Text(
-            "$text",
-            style: TextStyle(fontSize: 20),
-          ),
-          Text(
-            "Have you ever made your own $text? Once you've tried a homemade $text, you'll never go back.",
-            style: TextStyle(color: Colors.grey, fontSize: 12),
-          ),
-        ],
-      ),
+        ),
+        Text(
+          "$text",
+          style: TextStyle(fontSize: 20),
+        ),
+        Text(
+          "Have you ever made your own $text? Once you've tried a homemade $text, you'll never go back.",
+          style: TextStyle(color: Colors.grey, fontSize: 12),
+        ),
+      ],
     );
   }
 }
