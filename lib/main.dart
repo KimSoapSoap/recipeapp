@@ -12,14 +12,13 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: Text('Constraints Example')),
         body: Center(
           child: Container(
-            width: 500,
-            height: 200,
+            width: 300,
+            height: 300,
             color: Colors.blue,
-            constraints: BoxConstraints(
-              minWidth: double.infinity,
-              minHeight: 100,
-              maxWidth: double.infinity,
-              maxHeight: 300,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
             ),
           ),
         ),
