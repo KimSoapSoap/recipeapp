@@ -39,25 +39,20 @@ class HomePage extends StatelessWidget {
             SizedBox(width: 16)
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: ListView(
-            children: [
-              _title(),
-              SizedBox(height: 10),
-              _menu(),
-              SizedBox(height: 10),
-              Container(
-                height: 300,
+        body: Column(
+          children: [
+            Text("안녕"),
+            Container(
+              height: 300,
+              width: 300,
+              color: Colors.yellow,
+              child: Container(
+                height: 200,
+                width: 200,
                 color: Colors.red,
               ),
-              Placeholder(),
-              Container(
-                height: 300,
-                color: Colors.red,
-              ),
-            ],
-          ),
+            )
+          ],
         ));
   }
 
